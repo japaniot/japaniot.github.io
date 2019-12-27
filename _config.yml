@@ -12,7 +12,7 @@ permalink: pretty
 
 # Third-party services
 # just leave empty to disable it
+utteranc_repo: japaniot/japaniot.github.io
 google_analytics:
-disqus_shortname:
 
 exclude: ["LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "script"]
