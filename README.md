@@ -1,7 +1,9 @@
 # Japan IoT Blog
 
-Based on https://github.com/heiswayi/textlog.
+Blog template is based on https://github.com/heiswayi/textlog.
 
 ## License
 
-[MIT](LICENSE.md)
+I reserve all rights of the content of the blog (things under `_posts`).
+
+The code are under the MIT license.

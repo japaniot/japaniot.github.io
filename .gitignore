@@ -1,4 +1,6 @@
 _site
+.DS_Store
 .sass-cache
 .jekyll-metadata
+*.swp
 Gemfile.lock
