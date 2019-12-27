@@ -1,8 +1,8 @@
 # Site settings
 title: "TextLog"
 description: "Minimalist Jekyll theme for documentation site"
-baseurl: "/textlog" # required if used under gh-pages branch, else (under master branch) just leave empty/blank
-url: ""
+baseurl:  # required if used under gh-pages branch, else (under master branch) just leave empty/blank
+url: "https://japaniot.github.io"
 author: "John Doe"
 
 # Build settings
@@ -13,9 +13,6 @@ permalink: pretty
 # Third-party services
 # just leave empty to disable it
 google_analytics:
-disqus_shortname: 
-
-plugins:
-  - jekyll-sitemap
+disqus_shortname:
 
 exclude: ["LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "script"]
