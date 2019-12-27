@@ -3,4 +3,4 @@ layout: page
 title: About
 ---
 
-Introduce yourself here... so people will know who you are and what you do.. blah..blah..blah..
+I do IoT for fun, when I'm not working on [Electron](https://electronjs.org).

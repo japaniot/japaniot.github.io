@@ -1,9 +1,9 @@
 # Site settings
-title: "TextLog"
-description: "Minimalist Jekyll theme for documentation site"
+title: "Japan IoT Blog"
+description: "Home IoT devices and programming"
 baseurl:  # required if used under gh-pages branch, else (under master branch) just leave empty/blank
 url: "https://japaniot.github.io"
-author: "John Doe"
+author: "Cheng Zhao"
 
 # Build settings
 kramdown:
