@@ -34,9 +34,9 @@ that does not cost too much.
 
 ## Light switch
 
-I use the [AdvanceSeries LinkModel (link in Japanese)][linkmodel] made by
-Panasonic for light switches, it uses open source ECHONET Lite protocol and I
-have written [a homebridge plugin for it](https://github.com/japaniot/homebridge-echonet-lite).
+I use the [AdvanceSeries LinkModel](https://www2.panasonic.biz/ls/densetsu/haisen/switch_concent/advance/lineup/link/)
+made by Panasonic for light switches, it uses open source ECHONET Lite protocol
+and I have written [a homebridge plugin for it](https://github.com/japaniot/homebridge-echonet-lite).
 
 <img src="https://user-images.githubusercontent.com/639601/71551298-67b18600-2a27-11ea-9a1b-3049371f7436.jpeg" width="400" height="303" />
 
@@ -65,9 +65,8 @@ significantly and may cause fires. Use smart light bulbs instead.
 
 ## Infrared (IR) controller
 
-I use [Nature Remo Mini (link in Japanese)](https://nature.global) for
-controlling traditional devices that takes infrared input. I have written 2
-homebridge plugins for it,
+I use [Nature Remo Mini](https://nature.global) for controlling traditional
+devices that takes infrared input. I have written 2 homebridge plugins for it,
 [one using its cloud APIs for controlling preset devices](https://github.com/japaniot/homebridge-nature-remo-aircon)
 and [one using local APIs for sending arbitrary signals](https://github.com/japaniot/homebridge-nature-remo-local).
 
@@ -87,10 +86,9 @@ automation.
 
 ## Curtain
 
-For automating curtains I use [curtain motors and rails made by Nasnos (link in
-Japanese)](http://www.nasnos.com). For lace curtains I use the cheapest CR300
-model, for blackout curtains which are rather heavy I use the expensive CR1040
-model.
+For automating curtains I use [curtain motors and rails made by Nasnos](http://www.nasnos.com).
+For lace curtains I use the cheapest CR300 model, for blackout curtains which
+are rather heavy I use the expensive CR1040 model.
 
 Nasnos do not provide support for smart home but they however have a WiFi
 controller and corresponding iOS/Android apps, so I decompiled their Android app
@@ -118,17 +116,16 @@ wires.
 
 ## Air conditioner
 
-I use [air conditioners made by Mitsubishi
-Electric](https://www.mitsubishielectric.co.jp/home/kirigamine/), most models
-do support smart speakers and phone apps but they all require attaching an extra
-WiFi module.
+I use [air conditioners made by Mitsubishi Electric](https://www.mitsubishielectric.co.jp/home/kirigamine/),
+most models do support smart speakers and phone apps but they all require
+attaching an extra WiFi module.
 
 Some models made by Mitsubishi Electric support putting the module inside the
 air conditioner and that's why I buy this brand, however the 2 models I bought
 do not support it :( , make sure you ask the seller before buying one.
 
 In my home the workers have carefully attached the module to the corner of the
-wall, so it won't be easily noticed.
+wall, so it won't be noticed.
 
 <img src="https://user-images.githubusercontent.com/639601/71553056-aa855500-2a4b-11ea-836f-77f373165b38.png" width="451" height="200" />
 
@@ -174,7 +171,7 @@ I use the Dyson 360 Heurist, there are already several homebridge plugins for
 it but they seem to be area-specific, so I have written [my own
 plugin](https://github.com/japaniot/homebridge-dyson-robot).
 
-<img src="https://user-images.githubusercontent.com/639601/71554311-e840a880-2a60-11ea-8f14-061a42840370.jpeg" width="150" height="90" />
+<img src="https://user-images.githubusercontent.com/639601/71564007-802fa800-2adc-11ea-8ef8-d677f7bc501d.jpg" width="266" height="150" />
 
 Dyson 360 robots rely on camera to scan the room, so it does not work well in
 rooms that do not have much light. By connecting the robot to home automation,
@@ -182,4 +179,16 @@ it becomes possible to turn on/off lights automatically when robot runs/stops.
 
 ## Home security system
 
-[linkmodel]: https://www2.panasonic.biz/ls/densetsu/haisen/switch_concent/advance/lineup/link/
+My home uses [VIXUS HORIZO](https://www.aiphone.co.jp/products/complex/system/vixushorizo/)
+which has a camera system and can talk to visitors. The features are pretty
+standard in newly built homes in Japan.
+
+<img src="https://user-images.githubusercontent.com/639601/71564036-28de0780-2add-11ea-87f5-7d756250be31.jpg" width="300" height="226" />
+
+The good thing is it has a phone app, so I can receive notifications when there
+is a visitor and talk to them via my phone. The biggest problem is the
+notification have huge delay, and sometimes it could take >10s since the bell
+rang, this seems to be a problem of Apple's push system.
+
+It also has the classic security system that I can put my home to guarded mode
+and people who enters my home have to enter passcode to turn off the alarm.
