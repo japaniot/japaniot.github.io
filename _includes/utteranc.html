@@ -1,8 +1,12 @@
 {% if site.utteranc_repo %}
   <script src="https://utteranc.es/client.js"
           repo="{{ site.utteranc_repo }}"
+          {% if page.issue %}
+          issue-number="{{ page.issue }}"
+          {% else %}
           issue-term="pathname"
           label="comment"
+          {% endif %}
           theme="github-light"
           crossorigin="anonymous"
           async>

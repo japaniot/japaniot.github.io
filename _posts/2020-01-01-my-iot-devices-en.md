@@ -3,6 +3,7 @@ layout: post
 title: IoT Devices in my home
 tags: [IoT, Guide]
 comment: true
+issue: 2
 ---
 
 Most devices discussed bellow are only being sold in Japan, but it should be
