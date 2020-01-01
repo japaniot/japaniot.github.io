@@ -72,6 +72,13 @@
     margin: 1rem auto 1rem auto;
     box-sizing: border-box;
     max-width: $max-width;
+
+    .anchor-hash {
+        opacity: 0.2;
+    }
+    .anchor-hash:hover {
+        opacity: 1;
+    }
 }
 /**
  * Pages
