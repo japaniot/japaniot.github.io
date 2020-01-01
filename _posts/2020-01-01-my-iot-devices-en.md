@@ -168,7 +168,7 @@ Another thing with the Japanese model is, it does not have builtin TV tuner
 while all other models do. It is probably a good thing because otherwise I would
 have to pay ransom to NHK.
 
-## Sweeping robot
+## Robot vacuum
 
 I use the Dyson 360 Heurist, there are already several homebridge plugins for
 it but they seem to be area-specific, so I have written [my own

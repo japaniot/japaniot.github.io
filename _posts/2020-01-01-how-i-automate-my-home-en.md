@@ -147,9 +147,9 @@ when [time] is "9:00" do
 end
 ```
 
-### Open light for Dyson sweeping robot
+### Open light for Dyson robot vacuum
 
-I use the Dyson 360 Heurist sweeping robot in my home, it relies on camera to
+I use the Dyson 360 Heurist robot vacuum in my home, it relies on camera to
 scan the room so it does not work fine in dark rooms. I have added rules to turn
 on lights when the robot starts to run, and turn off lights when it is back to
 dock.
@@ -159,7 +159,7 @@ writing [my own homebridge plugin](https://github.com/japaniot/homebridge-dyson-
 
 Required devices:
 
-* Dyson 360 sweeping robot
+* Dyson robot vacuum
 * Smart light switches
 
 Rules:
