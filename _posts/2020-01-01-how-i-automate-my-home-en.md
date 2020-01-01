@@ -29,9 +29,7 @@ conditions to "if then" automations, with custom HomeBridge plugins it is
 possible to do any kind of automation.
 
 Basically I use the [homebridge-dummy](https://github.com/nfarina/homebridge-dummy)
-plugin to create dummy switches which can be used as Boolean variables. And I
-use the [homebridge-delayed-switches](https://github.com/grover/homebridge-delayed-switches)
-plugin to create delayed switches which can be used as timers.
+plugin to create dummy switches which can be used as variables.
 
 ## Automations
 
@@ -93,7 +91,9 @@ end
 
 I have a walk-in closet room and a storage room in my home, they are small don't
 have any window, so I programmed them to turn on light when door is opened and
-turn off light when door is closed.
+turn off light when door is closed ⬇️.
+
+<iframe width="253" height="450" src="https://www.youtube.com/embed/2ma39f8irOc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Required devices:
 
@@ -185,6 +185,10 @@ in the end when I have to open light I often forgot to close it.
 So I set a rule to automatically close the light of corridor after 5 minutes of
 opening.
 
+Note that the default timeout option of HomeKit automation is really useless, I
+use the [homebridge-delayed-switches](https://github.com/grover/homebridge-delayed-switches)
+plugin to create delayed switches which can be used as timers.
+
 Required devices:
 
 * Smart light switches
@@ -195,7 +199,7 @@ Rules:
 let [countdown switch] = new DelayedSwitch("close after 5 minutes")
 
 when [light] is "open" do
-  set [countdown.switch] to "open"
+  set [countdown switch] to "open"
 end
 
 when [countdown switch] is "close" do
@@ -209,6 +213,8 @@ I usually spend my night in rooms other than the living room, and sometimes I
 need to get into the dark living room to get some food or water. So I make the
 lights in kitchen automatically open/close when people enter/leave the living
 room ⬇️.
+
+<iframe width="253" height="450" src="https://www.youtube.com/embed/y5lf4_psIns" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 There are a few things that make the rules a bit complicated:
 
@@ -258,3 +264,79 @@ multiple motion sensors would be a disaster.
 
 I have been using the [homebridge-occupancy-delay](https://github.com/archanglmr/homebridge-occupancy-delay)
 plugin to connect multiple motion sensors together.
+
+### Toilet auto-light
+
+In Japanese homes toilet is usually in a separate small dark room, so to use the
+toilet I have to turn on/off the light every time. I added an automation to
+automatically turn on/off the light when entering/leaving the room ⬇️.
+
+<iframe width="253" height="450" src="https://www.youtube.com/embed/TbcTh4-FqSs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+I also made the automation change the brightness of the night base on current
+time, so when I wake up and enter the toilet in midnight, the light would dim.
+
+There are actually existing automatic toilet light switches based human sensor,
+however if you sit on the toilet for a long time without much movement, the
+light would turn off while you are still in the room. For the same reason I do
+not use motion sensor to implement this automation.
+
+What I do is using door as occupancy indicator: the first time people opens the
+door the light would turn on, the second time people opens the door the light
+would turn off. (This rule however does not fit toilets outside Japan, where
+toilets are usually in the bathroom instead of a separate room.)
+
+When implementing this automation, I found that with HomeKit if you change the
+state of the switch on the event of the same switch, automations would be
+completely out of order. So in the end I used 2 dummy switches as state
+indicators.
+
+I also found that HomeKit can not set time range to midnight like "10pm - 5am",
+so I wrote [my own homebridge plugin](https://github.com/japaniot/homebridge-time-range)
+instead.
+
+Required devices:
+
+* Smart light bulb/switch
+* Door sensor
+
+Rules:
+
+```
+let [midnight] = new TimeRangeSwitch("10pm - 5am")
+let [occupied] = new DummySwitch("off")
+let [leaving] = new DummySwitch("off")
+
+when [door sensor] is "open" do
+  if [occupied] is "off" and [midnight] is "off" then
+    set [light] to "100%"
+    set [leaving] to "off"
+  end
+end
+
+when [door sensor] is "open" do
+  if [occupied] is "off" and [midnight] is "on" then
+    set [light] to "10%"
+    set [leaving] to "off"
+  end
+end
+
+when [door sensor] is "close" do
+  if [light] is "on" and [leaving] is "off" then
+    set [occupied] to "on"
+  end
+end
+
+when [door sensor] is "open" do
+  if [occupied] is "on" then
+    set [light] to "off"
+    set [leaving] to "on"
+  end
+end
+
+when [door sensor] is "close" do
+  if [leaving] is "on" then
+    set [occupied] to "off"
+  end
+end
+```

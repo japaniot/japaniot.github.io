@@ -9,6 +9,9 @@ issue: 2
 Most devices discussed bellow are only being sold in Japan, but it should be
 possible to find similar products in your country.
 
+For examples on how to setup home automations, please check
+[How I automate my home](https://japaniot.github.io/2020/01/01/how-i-automate-my-home-en/).
+
 ## Door sensor and motion sensor
 
 I use [Aqara](https://www.aqara.com) products for door and motion sensors.
