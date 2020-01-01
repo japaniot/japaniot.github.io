@@ -106,11 +106,11 @@ Rules:
 
 ```
 when [door sensor] is "open" do
-  set [light] to "open"
+  set [light] to "on"
 end
 
 when [door sensor] is "close" do
-  set [light] to "close"
+  set [light] to "off"
 end
 ```
 
@@ -166,14 +166,14 @@ Rules:
 
 ```
 when [dyson] is "running" do
-  set [light] in [living room] to "open"
-  set [light] in [bedroom] to "open"
+  set [light] in [living room] to "on"
+  set [light] in [bedroom] to "on"
   ...
 end
 
 when [dyson] is "docked" do
-  set [light] in [living room] to "close"
-  set [light] in [bedroom] to "close"
+  set [light] in [living room] to "off"
+  set [light] in [bedroom] to "off"
   ...
 end
 ```
@@ -201,12 +201,12 @@ Rules:
 ```
 let [countdown switch] = new DelayedSwitch("close after 5 minutes")
 
-when [light] is "open" do
+when [light] is "on" do
   set [countdown switch] to "open"
 end
 
 when [countdown switch] is "close" do
-  set [light] to "close"
+  set [light] to "off"
 end
 ```
 
