@@ -60,7 +60,7 @@ Currently I have 4 scenes:
   - Turn on all lights in living room
 
 This is how the "dinner time" scene looks like ⬇️
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pmf46YsNnLQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pmf46YsNnLQ?rel=0&controls=0&showinfo=0&loop=1&playlist=pmf46YsNnLQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Volume adjust for different video inputs
 
@@ -93,7 +93,7 @@ I have a walk-in closet room and a storage room in my home, they are small don't
 have any window, so I programmed them to turn on light when door is opened and
 turn off light when door is closed ⬇️.
 
-<iframe width="253" height="450" src="https://www.youtube.com/embed/2ma39f8irOc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="253" height="450" src="https://www.youtube.com/embed/2ma39f8irOc?rel=0&controls=0&showinfo=0&loop=1&playlist=2ma39f8irOc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Required devices:
 
@@ -214,7 +214,7 @@ need to get into the dark living room to get some food or water. So I make the
 lights in kitchen automatically open/close when people enter/leave the living
 room ⬇️.
 
-<iframe width="253" height="450" src="https://www.youtube.com/embed/y5lf4_psIns" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="253" height="450" src="https://www.youtube.com/embed/y5lf4_psIns?rel=0&controls=0&showinfo=0&loop=1&playlist=y5lf4_psIns" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 There are a few things that make the rules a bit complicated:
 
@@ -271,7 +271,7 @@ In Japanese homes toilet is usually in a separate small dark room, so to use the
 toilet I have to turn on/off the light every time. I added an automation to
 automatically turn on/off the light when entering/leaving the room ⬇️.
 
-<iframe width="253" height="450" src="https://www.youtube.com/embed/TbcTh4-FqSs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="253" height="450" src="https://www.youtube.com/embed/TbcTh4-FqSs?rel=0&controls=0&showinfo=0&loop=1&playlist=TbcTh4-FqSs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 I also made the automation change the brightness of the night base on current
 time, so when I wake up and enter the toilet in midnight, the light would dim.
