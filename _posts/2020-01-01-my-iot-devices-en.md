@@ -1,15 +1,14 @@
 ---
 layout: post
 title: IoT Devices in my home
-tags: [IoT, Guide]
+tags: [IoT]
 comment: true
-issue: 2
 ---
 
 Most devices discussed bellow are only being sold in Japan, but it should be
 possible to find similar products in your country.
 
-For examples on how to setup home automations, please check
+For examples on how to set up home automations, please check
 [How I automate my home](https://japaniot.github.io/2020/01/01/how-i-automate-my-home-en/).
 
 ## Door sensor and motion sensor
@@ -49,13 +48,13 @@ outlets, so all the wall plates and switch covers in my home can stay consistent
 and beautiful.
 
 It has to be noticed that, the LinkModel light switches use touch interface: you
-have to tap it to open/close and slide to change lightness. This interface
+have to tap it to open/close and slide to change brightness. This interface
 absolutely looks most beautiful, but takes time to get used to.
 
 The biggest problem of LinkModel light switches is its WiFi adapter. The
 responding speed is way too slow: for home automations ideal response time
 should be < 10ms, however LinkModel may take over 100ms to respond, and when
-opening/closing lights, the API would wait until the lights fully opened/closed
+turning on/off lights, the API would wait until the lights fully turned on/off
 before finishing, which can take seconds.
 
 Setting LinkModel light switches, however requires connecting ground wires, so
@@ -63,60 +62,60 @@ unless you have been planning for smart light switches since building your home,
 you won't be able to use it.
 
 There are also smart light switches that do not require ground wiring, but
-please DO NOT use them. They work by reducing electric current to minimum but
+please DO NOT use them. They work by reducing electric current to minimum and
 the lights are still connected, it would reduce the lifetime of your lights
 significantly and may cause fires. Use smart light bulbs instead.
 
 ## Infrared (IR) controller
 
 I use [Nature Remo Mini](https://nature.global) for controlling traditional
-devices that takes infrared input. I have written 2 homebridge plugins for it,
-[one using its cloud APIs for controlling preset devices](https://github.com/japaniot/homebridge-nature-remo-aircon)
+devices that takes infrared input. I have written/forked 2 homebridge plugins
+for it, [one using its cloud APIs for controlling preset devices](https://github.com/japaniot/homebridge-nature-remo-aircon)
 and [one using local APIs for sending arbitrary signals](https://github.com/japaniot/homebridge-nature-remo-local).
 
 <img src="https://user-images.githubusercontent.com/639601/71551299-67b18600-2a27-11ea-89ee-d89c22b57c3c.jpeg" width="300" height="223" />
 
-The main reason I choose Nature Remo Mini over others, is its design is so much
-better so won't look strange when attached to my white wall. It also has a rich
-preset for machines sold in Japan, and the API is enough for me to implement
-everything.
+The main reason I choose Nature Remo Mini, is because its design is so much
+better than others so won't look strange when attached to my white wall. It also
+has a rich preset for machines in Japan, and the API is enough for me to
+implement everything.
 
 When choosing an IR controller, I would recommend buying one that has
 temperature sensor included, as it would be very handy when controlling air
 conditioners. And if you use it to control machines that take very long time to
 start (for example projectors), I would suggest buying one with public APIs, as
-you may have to do programming to make it action normally in your home
+you may have to do programming to make it action as expected in your home
 automation.
 
 ## Curtain
 
 For automating curtains I use [curtain motors and rails made by Nasnos](http://www.nasnos.com).
 For lace curtains I use the cheapest CR300 model, for blackout curtains which
-are rather heavy I use the expensive CR1040 model.
+are very heavy I use the expensive CR1040 model.
 
-Nasnos do not provide support for smart home but they however have a WiFi
-controller and corresponding iOS/Android apps, so I decompiled their Android app
-and wrote [a homebridge plugin](https://github.com/japaniot/homebridge-nasnos).
+Nasnos do not provide support for smart home but they have a WiFi controller and
+corresponding iOS/Android apps, so I decompiled their Android app and wrote [a
+homebridge plugin](https://github.com/japaniot/homebridge-nasnos).
 
 <img src="https://user-images.githubusercontent.com/639601/71553048-80cc2e00-2a4b-11ea-84fd-b3f13f8869ba.png" width="200" height="394" />
 
-Almost none Japanese curtain maker provides APIs for controlling curtains,
+Almost no Japanese curtain motor maker provides APIs for controlling curtains,
 Nasnos is the only maker that I can find that provides phone apps which makes
 HomeKit support possible. But still Nasnos do not support reporting current
 position, so the position reported in HomeKit would be wrong if the curtain is
 dragged manually.
 
 There is a small maker [LinkJapan](https://linkjapan.co.jp) providing smart
-electric curtains, and their product is actually based on Nasnos CR300. But they
-do not have powerful motors for heavy blackout curtains.
+electric curtains in Japan, and their product is actually based on Nasnos CR300.
+But they do not have powerful motors for heavy blackout curtains.
 
 Somfy also has better products and I heard their APIs are also good, but their
 support in Japan is rather limited and their price is much more higher.
 
-Note that most electric curtains can just be attached to existing curtain rails
-and can be connected to existing outlets, but if you are building your own home
-you should add some curtain-only outlets and it would be possible to hide all
-wires.
+Note that while most electric curtains can be attached to existing curtain rails
+and powered by existing outlets, if you are building your own home you should
+add curtain-only outlets on the roof so it would be possible to hide all wiring
+like the picture above.
 
 ## Air conditioner
 
