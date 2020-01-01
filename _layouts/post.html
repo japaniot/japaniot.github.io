@@ -26,7 +26,7 @@ layout: default
     </p>
   </header>
   <div class="post-content" itemprop="articleBody">
-    {{ content }}
+    {% include anchor_headings.html html=content %}
   </div>
   <hr>
   {% if page.comment %}

@@ -6,8 +6,7 @@ comment: true
 ---
 
 This blog focuses on the abstract ideas on how I automate my home, rules here
-are written in pseudocode and can able to be translate to any home automation
-scripts.
+are written in pseudocode and can be translated to any home automation scripts.
 
 For details on the IoT devices I'm using, please check
 [IoT Devices in my home](https://japaniot.github.io/2020/01/01/my-iot-devices-en/).
@@ -250,7 +249,7 @@ when [occupancy sensor] is "empty" do
 end
 ```
 
-##### More on occupancy sensor
+#### More on occupancy sensor
 
 Currently there is very few true occupancy sensors and most of them are
 essentially just motion sensors. If your living room is large enough only one
